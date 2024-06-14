@@ -83,7 +83,8 @@ class Package
             !isset($note) ? : $topic->setNote($note);
 
             $topic->setId((string)$data->id);
-            $topic->setTitle((string)$data->title);
+	    $title = isset($data->title) ? $data->title : '';
+            $topic->setTitle((string)$title);
 
             $label = isset($data->labels) ? (string) $data->labels->label : null;
             !isset($note) ? : $topic->setLabel($label);
